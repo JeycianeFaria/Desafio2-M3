@@ -7,6 +7,15 @@ public class ServicoVendedor {
 
     private static List<Vendedor> vendedores = new ArrayList<>();
 
+    public static void verificarCpfVendedor(String cpf) throws Exception{
+        for (Vendedor referencia:vendedores){
+            if (referencia.getCpf().equals(cpf)){
+                throw new Exception("CPF já cadastrado!");
+            }
+        }
+    }
+
+
     public static Vendedor cadastrarVendedor(String nome, String cpf, String email, double salario){
 
         Vendedor vendedor = new Vendedor(nome,cpf,email,salario);

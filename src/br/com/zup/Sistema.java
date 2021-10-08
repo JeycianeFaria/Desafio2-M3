@@ -45,10 +45,12 @@ public class Sistema {
     }
 
 
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor() throws Exception {
         String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Digite o cpf do vendedor: ").nextLine();
+        ServicoVendedor.verificarCpfVendedor(cpf);
         String email = capturarDados("Digite o email do vendedor: ").nextLine();
+        ServicoCliente.validarEmail(email);
         double salario = capturarDados("Digite o salário do vendedor: ").nextDouble();
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email, salario);
