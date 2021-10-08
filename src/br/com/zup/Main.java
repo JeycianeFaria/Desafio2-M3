@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            System.out.println(Sistema.cadastrarVendedor());
+            Sistema.cadastrarVendedor();
             ServicoVendedor.exibirVendedoresCadastrados();
         }catch (Exception erro){
             System.out.println(erro.getMessage());

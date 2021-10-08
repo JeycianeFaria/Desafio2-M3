@@ -23,4 +23,14 @@ public class ServicoVendedor {
         return vendedores;
     }
 
+    public static Vendedor buscarVendedor(String emailBusca) throws Exception{
+        for (Vendedor referencia:vendedores){
+            if(referencia.getEmail().equals(emailBusca)){
+                return referencia;
+            }
+        }
+
+        throw new Exception("\nVendedor não encontrado!");
+    }
+
 }
