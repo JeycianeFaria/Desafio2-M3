@@ -14,4 +14,12 @@ public class ServicoVenda {
         return venda;
     }
 
+    public static List<Venda> exibirVendasRegistradas(){
+        for (Venda referencia:registroVendas){
+            System.out.println(referencia);
+        }
+
+        return registroVendas;
+    }
+
 }
