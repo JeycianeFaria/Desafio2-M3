@@ -51,6 +51,7 @@ public class Sistema {
         ServicoVendedor.verificarCpfVendedor(cpf);
         String email = capturarDados("Digite o email do vendedor: ").nextLine();
         ServicoCliente.validarEmail(email);
+        ServicoVendedor.verificarEmailVendedor(email);
         double salario = capturarDados("Digite o salário do vendedor: ").nextDouble();
 
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email, salario);

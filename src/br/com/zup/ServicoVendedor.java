@@ -15,6 +15,14 @@ public class ServicoVendedor {
         }
     }
 
+    public static void verificarEmailVendedor(String email) throws Exception{
+        for (Vendedor referencia:vendedores){
+            if(referencia.getEmail().equalsIgnoreCase(email)){
+                throw new Exception("Email já cadastrado!");
+            }
+        }
+    }
+
 
     public static Vendedor cadastrarVendedor(String nome, String cpf, String email, double salario){
 
@@ -34,7 +42,7 @@ public class ServicoVendedor {
 
     public static Vendedor buscarVendedor(String emailBusca) throws Exception{
         for (Vendedor referencia:vendedores){
-            if(referencia.getEmail().equals(emailBusca)){
+            if(referencia.getEmail().equalsIgnoreCase(emailBusca)){
                 return referencia;
             }
         }
