@@ -8,7 +8,6 @@ public class Sistema {
         System.out.println(mensagem);
 
         return new Scanner(System.in);
-
     }
 
 }
