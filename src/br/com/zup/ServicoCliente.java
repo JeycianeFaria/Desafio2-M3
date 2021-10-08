@@ -15,4 +15,12 @@ public class ServicoCliente {
         return cliente;
     }
 
+    public static List<Cliente> exibirClientesCadastrados(){
+        for (Cliente referencia:clientes){
+            System.out.println(referencia);
+        }
+
+        return clientes;
+    }
+
 }
