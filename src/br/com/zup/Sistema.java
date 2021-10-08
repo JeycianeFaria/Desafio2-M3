@@ -32,6 +32,7 @@ public class Sistema {
         ServicoCliente.verificarCpfCliente(cpf);
         String email = capturarDados("Digite o email do cliente: ").nextLine();
         ServicoCliente.validarEmail(email);
+        ServicoCliente.verificarEmailCliente(email);
         String telefone = capturarDados("Digite o telefone do cliente: ").nextLine();
 
         return ServicoCliente.cadastrarCliente(nome, cpf, email, telefone);

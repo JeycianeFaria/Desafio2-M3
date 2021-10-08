@@ -17,11 +17,18 @@ public class ServicoCliente {
     public static void verificarCpfCliente(String cpf) throws Exception{
         for (Cliente referencia: clientes){
             if (referencia.getCpf().equals(cpf)){
-                throw new Exception("Cpf já cadastrado!");
+                throw new Exception("CPF já cadastrado!");
             }
         }
     }
 
+    public static void verificarEmailCliente(String email) throws Exception{
+        for (Cliente referencia:clientes){
+            if(referencia.getEmail().equalsIgnoreCase(email)){
+                throw new Exception("Email já cadastrado!");
+            }
+        }
+    }
 
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone){
 
