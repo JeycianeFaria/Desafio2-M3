@@ -4,9 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Vendedor vendedor = new Vendedor("Pedro", "142536", "pedro@pedro", 1500);
+        Cliente cliente = new Cliente("Joao","142536","joao@joao", "9999999");
+        Vendedor vendedor = new Vendedor("Pedro", "968574", "pedro@pedro", 1500);
+        Venda venda = new Venda(cliente,vendedor,150,"08/10");
 
-        System.out.println(vendedor);
+        System.out.println(venda);
 
     }
 }

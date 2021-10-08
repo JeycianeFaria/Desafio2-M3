@@ -26,10 +26,10 @@ public class Cliente extends Pessoa {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("======Cliente======");
+        exibir.append("\n=======Cliente=======");
         exibir.append(super.toString());
         exibir.append("\nTelefone: " + telefone);
-        exibir.append("\n===================");
+        exibir.append("\n=====================");
         return exibir.toString();
     }
 

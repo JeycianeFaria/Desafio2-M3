@@ -26,10 +26,10 @@ public class Vendedor extends Pessoa{
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("======Vendedor======");
+        exibir.append("\n=======Vendedor======");
         exibir.append(super.toString());
         exibir.append("\nSalário: R$" + salario);
-        exibir.append("\n====================");
+        exibir.append("\n=====================");
         return exibir.toString();
     }
 }
