@@ -23,4 +23,14 @@ public class ServicoCliente {
         return clientes;
     }
 
+    public static Cliente buscarCliente(String cpfBusca) throws Exception{
+        for (Cliente referencia:clientes){
+            if(referencia.getCpf().equals(cpfBusca)){
+                return referencia;
+            }
+        }
+
+        throw new Exception("Cliente não encontrado!");
+    }
+
 }
