@@ -14,6 +14,15 @@ public class ServicoCliente {
     }
 
 
+    public static void verificarCpfCliente(String cpf) throws Exception{
+        for (Cliente referencia: clientes){
+            if (referencia.getCpf().equals(cpf)){
+                throw new Exception("Cpf já cadastrado!");
+            }
+        }
+    }
+
+
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone){
 
         Cliente cliente = new Cliente(nome,cpf,email,telefone);
