@@ -19,6 +19,12 @@ public class Sistema {
         System.out.println("Digite 5 - para sair.");
     }
 
+    public static void menuExibirCadastros(){
+        System.out.println("Digite 1 - para exibir clientes cadastrados.");
+        System.out.println("Digite 2 - para exibir vendedores cadastrados.");
+        System.out.println("Digite 3 - para exibir vendas registradas.");
+        System.out.println("Digite 4 - para voltar ao menu anterior.");
+    }
 
     public static Cliente cadastrarCliente(){
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
