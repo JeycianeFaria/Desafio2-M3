@@ -29,6 +29,7 @@ public class Cliente extends Pessoa {
         exibir.append("======Cliente======");
         exibir.append(super.toString());
         exibir.append("\nTelefone: " + telefone);
+        exibir.append("\n===================");
         return exibir.toString();
     }
 

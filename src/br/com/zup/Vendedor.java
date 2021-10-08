@@ -29,7 +29,7 @@ public class Vendedor extends Pessoa{
         exibir.append("======Vendedor======");
         exibir.append(super.toString());
         exibir.append("\nSalário: R$" + salario);
-        exibir.append("====================");
+        exibir.append("\n====================");
         return exibir.toString();
     }
 }
