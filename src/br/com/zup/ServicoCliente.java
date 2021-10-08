@@ -30,7 +30,7 @@ public class ServicoCliente {
             }
         }
 
-        throw new Exception("Cliente não encontrado!");
+        throw new Exception("\nCliente não encontrado!");
     }
 
 }

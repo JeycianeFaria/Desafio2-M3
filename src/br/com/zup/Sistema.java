@@ -18,4 +18,10 @@ public class Sistema {
 
         return ServicoCliente.cadastrarCliente(nome,cpf,email,telefone);
     }
+
+    public static Cliente buscarCliente() throws Exception{
+        String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
+
+        return ServicoCliente.buscarCliente(cpfBusca);
+    }
 }
