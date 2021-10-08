@@ -5,13 +5,17 @@ import java.util.SortedMap;
 public class Main {
 
     public static void main(String[] args) {
-        try {
+        boolean executarSistema = true;
 
+        while (executarSistema){
 
-        }catch (Exception erro){
+            try {
+                executarSistema = Sistema.executar();
+            }catch (Exception erro){
+                System.out.println(erro.getMessage());
+            }
 
         }
-
 
     }
 }
