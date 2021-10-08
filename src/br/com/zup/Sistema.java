@@ -10,6 +10,16 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
+    public static void menuPrincipal(){
+        System.out.println("======Bem Vindo=====");
+        System.out.println("Digite 1 - para cadastrar um cliente.");
+        System.out.println("Digite 2 - para cadastrar um vendedor.");
+        System.out.println("Digite 3 - para registrar uma venda.");
+        System.out.println("Digite 4 - para exibir cadastros já realizados.");
+        System.out.println("Digite 5 - para sair.");
+    }
+
+
     public static Cliente cadastrarCliente(){
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
