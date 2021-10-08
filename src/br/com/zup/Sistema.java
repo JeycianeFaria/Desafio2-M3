@@ -25,6 +25,7 @@ public class Sistema {
         return ServicoCliente.buscarCliente(cpfBusca);
     }
 
+
     public static Vendedor cadastrarVendedor(){
         String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
         String cpf = capturarDados("Digite o cpf do vendedor: ").nextLine();
@@ -33,4 +34,11 @@ public class Sistema {
 
         return ServicoVendedor.cadastrarVendedor(nome,cpf,email,salario);
     }
+
+    public static Vendedor buscarVendedor() throws Exception{
+        String emailBusca = capturarDados("\nDigite o email do vendedor que deseja buscar: ").nextLine();
+
+        return ServicoVendedor.buscarVendedor(emailBusca);
+    }
+
 }
