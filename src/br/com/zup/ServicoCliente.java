@@ -7,6 +7,13 @@ public class ServicoCliente {
 
     private static List<Cliente> clientes = new ArrayList<>();
 
+    public static void validarEmail(String email) throws Exception{
+        if (!email.contains("@")){
+            throw new Exception("Email digitado inválido!");
+        }
+    }
+
+
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone){
 
         Cliente cliente = new Cliente(nome,cpf,email,telefone);

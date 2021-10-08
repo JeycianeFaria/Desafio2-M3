@@ -26,10 +26,11 @@ public class Sistema {
         System.out.println("Digite 4 - para voltar ao menu anterior.");
     }
 
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception{
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
         String email = capturarDados("Digite o email do cliente: ").nextLine();
+        ServicoCliente.validarEmail(email);
         String telefone = capturarDados("Digite o telefone do cliente: ").nextLine();
 
         return ServicoCliente.cadastrarCliente(nome, cpf, email, telefone);
