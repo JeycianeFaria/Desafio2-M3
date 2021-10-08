@@ -15,4 +15,12 @@ public class ServicoVendedor {
         return vendedor;
     }
 
+    public static List<Vendedor> exibirVendedoresCadastrados(){
+        for (Vendedor referencia:vendedores){
+            System.out.println(referencia);
+        }
+
+        return vendedores;
+    }
+
 }
