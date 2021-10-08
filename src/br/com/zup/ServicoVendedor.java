@@ -9,7 +9,7 @@ public class ServicoVendedor {
 
     public static Vendedor cadastrarVendedor(String nome, String cpf, String email, double salario){
 
-        Vendedor vendedor = new Cliente(nome,cpf,email,salario);
+        Vendedor vendedor = new Vendedor(nome,cpf,email,salario);
         vendedores.add(vendedor);
 
         return vendedor;
