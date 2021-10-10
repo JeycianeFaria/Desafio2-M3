@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -72,6 +73,11 @@ public class Sistema {
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
     }
 
+    public static List<Venda> comprasPorCliente() throws Exception{
+        String cpf = capturarDados("Digite o cpf do cliente que deseja verificar as compras: ").nextLine();
+        Cliente cliente = ServicoCliente.buscarCliente(cpf);
+        return ServicoVenda.comprasPorCliente(cliente);
+    }
 
     public static boolean executar() throws Exception {
 
@@ -113,8 +119,10 @@ public class Sistema {
                         ServicoVenda.exibirVendasRegistradas();
 
                     } else if (opcaoSelecionada == 4) {
-                        exibirSubMenu = false;
+                        Sistema.comprasPorCliente();
 
+                    } else if (opcaoSelecionada == 5){
+                        exibirSubMenu = false;
                     } else {
                         System.out.println("\nOpção selecionada inválida, digite novamente!\n");
 
