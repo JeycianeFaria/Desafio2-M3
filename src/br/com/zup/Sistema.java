@@ -16,15 +16,18 @@ public class Sistema {
         System.out.println("Digite 1 - para cadastrar um cliente.");
         System.out.println("Digite 2 - para cadastrar um vendedor.");
         System.out.println("Digite 3 - para registrar uma venda.");
-        System.out.println("Digite 4 - para exibir cadastros já realizados.");
+        System.out.println("Digite 4 - para exibir registros da organização.");
         System.out.println("Digite 5 - para sair.");
     }
 
-    public static void menuExibirCadastros() {
+    public static void menuExibirRegistros() {
+        System.out.println("==========Resgistros=da=Organização=========");
         System.out.println("Digite 1 - para exibir clientes cadastrados.");
         System.out.println("Digite 2 - para exibir vendedores cadastrados.");
-        System.out.println("Digite 3 - para exibir vendas registradas.");
-        System.out.println("Digite 4 - para voltar ao menu anterior.");
+        System.out.println("Digite 3 - para exibir todas vendas registradas.");
+        System.out.println("Digite 4 - para exibir compras registradas por cliente.");
+        System.out.println("Digite 5 - para exibir vendas registradas por vendedor.");
+        System.out.println("Digite 6 - para voltar ao menu anterior.");
     }
 
     public static Cliente cadastrarCliente() throws Exception{
@@ -106,7 +109,7 @@ public class Sistema {
 
                 while (exibirSubMenu) {
 
-                    menuExibirCadastros();
+                    menuExibirRegistros();
                     opcaoSelecionada = capturarDados("Digite a opção desejada: ").nextInt();
 
                     if (opcaoSelecionada == 1) {
@@ -121,12 +124,16 @@ public class Sistema {
                     } else if (opcaoSelecionada == 4) {
                         Sistema.comprasPorCliente();
 
-                    } else if (opcaoSelecionada == 5){
+                    }else if (opcaoSelecionada == 5){
+                        //vendasPorVendedor
+                    }
+                    else if (opcaoSelecionada == 6){
                         exibirSubMenu = false;
                     } else {
                         System.out.println("\nOpção selecionada inválida, digite novamente!\n");
 
                     }
+
                 }
 
             } else if (opcaoSelecionada == 5) {
