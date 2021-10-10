@@ -79,7 +79,15 @@ public class Sistema {
     public static List<Venda> comprasPorCliente() throws Exception{
         String cpf = capturarDados("Digite o cpf do cliente que deseja verificar as compras: ").nextLine();
         Cliente cliente = ServicoCliente.buscarCliente(cpf);
+
         return ServicoVenda.comprasPorCliente(cliente);
+    }
+
+    public static List<Venda> vendasPorVendedor() throws Exception{
+        String email = capturarDados("Digite o email do vendedor que deseja verificar as vendas: ").nextLine();
+        Vendedor vendedor = ServicoVendedor.buscarVendedor(email);
+
+        return ServicoVenda.vendasPorVendedor(vendedor);
     }
 
     public static boolean executar() throws Exception {
@@ -125,7 +133,7 @@ public class Sistema {
                         Sistema.comprasPorCliente();
 
                     }else if (opcaoSelecionada == 5){
-                        //vendasPorVendedor
+                        Sistema.vendasPorVendedor();
                     }
                     else if (opcaoSelecionada == 6){
                         exibirSubMenu = false;

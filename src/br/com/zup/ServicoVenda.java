@@ -35,4 +35,17 @@ public class ServicoVenda {
         return comprasCliente;
     }
 
+    public static List<Venda> vendasPorVendedor(Vendedor vendedor){
+        List<Venda> vendasVendedor = new ArrayList<>();
+
+        for (Venda referencia:registroVendas){
+            if (referencia.getVendedorResponsavel().equals(vendedor)){
+                vendasVendedor.add(referencia);
+                System.out.println(referencia);
+            }
+        }
+
+        return vendasVendedor;
+    }
+
 }
