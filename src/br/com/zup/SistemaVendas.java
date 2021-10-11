@@ -4,7 +4,7 @@ import static br.com.zup.Sistema.capturarDados;
 
 public class SistemaVendas {
 
-    public static void menuVendas(){
+    public static void menuVendas() {
         System.out.println("\n================MENU VENDAS==================");
         System.out.println("Digite 1 - para registar uma venda.");
         System.out.println("Digite 2 - para exibir vendas registradas.");
@@ -23,6 +23,7 @@ public class SistemaVendas {
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
     }
 
+
     public static void executarVendas() throws Exception {
 
         boolean executarMenuVendas = true;
@@ -32,23 +33,23 @@ public class SistemaVendas {
             menuVendas();
             int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
-            if (opcaoSelecionada == 1){
+            if (opcaoSelecionada == 1) {
                 registrarVenda();
                 System.out.println("\nVenda registrada com sucesso!");
 
-            }else if (opcaoSelecionada == 2){
+            } else if (opcaoSelecionada == 2) {
                 ServicoVenda.exibirVendasRegistradas();
 
-            }else if (opcaoSelecionada == 3){
+            } else if (opcaoSelecionada == 3) {
                 SistemaCliente.comprasPorCliente();
 
-            }else if (opcaoSelecionada == 4){
+            } else if (opcaoSelecionada == 4) {
                 SistemaVendedor.vendasPorVendedor();
 
-            }else if (opcaoSelecionada == 5){
+            } else if (opcaoSelecionada == 5) {
                 executarMenuVendas = false;
-            }
-            else{
+
+            } else {
                 System.out.println("\nOpção selecionada inválida, digite novamente!");
 
             }

@@ -1,6 +1,5 @@
 package br.com.zup;
 
-import java.util.List;
 import java.util.Scanner;
 
 import static br.com.zup.SistemaCliente.executarCliente;
@@ -44,6 +43,7 @@ public class Sistema {
             } else if (opcaoSelecionada == 4) {
                 executarMenu = false;
                 System.out.println("\nAté a proxima!\n");
+
             } else {
                 System.out.println("\nOpção selecionada inválida, digite novamente!");
 

@@ -62,4 +62,5 @@ public class Venda {
         exibir.append("\nData registro: " + dataDeRegistro);
         return exibir.toString();
     }
+
 }

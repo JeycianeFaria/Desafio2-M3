@@ -1,6 +1,6 @@
 package br.com.zup;
 
-public class Vendedor extends Pessoa{
+public class Vendedor extends Pessoa {
 
     private double salario;
 
@@ -31,4 +31,5 @@ public class Vendedor extends Pessoa{
         exibir.append("\nSalário: R$" + salario);
         return exibir.toString();
     }
+
 }

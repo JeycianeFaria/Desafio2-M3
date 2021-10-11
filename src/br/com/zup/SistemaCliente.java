@@ -6,7 +6,7 @@ import static br.com.zup.Sistema.capturarDados;
 
 public class SistemaCliente {
 
-    public static void menuCliente(){
+    public static void menuCliente() {
         System.out.println("\n================MENU CLIENTE=================");
         System.out.println("Digite 1 - para cadastrar um cliente.");
         System.out.println("Digite 2 - para exibir clientes cadastrados.");
@@ -15,7 +15,7 @@ public class SistemaCliente {
     }
 
 
-    public static Cliente cadastrarCliente() throws Exception{
+    public static Cliente cadastrarCliente() throws Exception {
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String cpf = capturarDados("Digite o cpf do cliente: ").nextLine();
         ServicoCliente.verificarCpfCliente(cpf);
@@ -34,7 +34,7 @@ public class SistemaCliente {
     }
 
 
-    public static List<Venda> comprasPorCliente() throws Exception{
+    public static List<Venda> comprasPorCliente() throws Exception {
         String cpf = capturarDados("Digite o cpf do cliente que deseja verificar as compras: ").nextLine();
         Cliente cliente = ServicoCliente.buscarCliente(cpf);
 
@@ -51,20 +51,20 @@ public class SistemaCliente {
             menuCliente();
             int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
-            if (opcaoSelecionada == 1){
+            if (opcaoSelecionada == 1) {
                 cadastrarCliente();
                 System.out.println("\nCliente cadastrado com sucesso!");
 
-            }else if (opcaoSelecionada == 2){
+            } else if (opcaoSelecionada == 2) {
                 ServicoCliente.exibirClientesCadastrados();
 
-            }else if (opcaoSelecionada == 3){
+            } else if (opcaoSelecionada == 3) {
                 SistemaCliente.comprasPorCliente();
 
-            }else if (opcaoSelecionada == 4){
+            } else if (opcaoSelecionada == 4) {
                 executarMenuCliente = false;
 
-            }else{
+            } else {
                 System.out.println("\nOpção selecionada inválida, digite novamente!");
 
             }
@@ -72,6 +72,5 @@ public class SistemaCliente {
         }
 
     }
-
 
 }

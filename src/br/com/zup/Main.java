@@ -6,11 +6,11 @@ public class Main {
 
         boolean executarSistema = true;
 
-        while (executarSistema){
+        while (executarSistema) {
 
             try {
                 executarSistema = Sistema.executar();
-            }catch (Exception erro){
+            } catch (Exception erro) {
                 System.out.println(erro.getMessage());
             }
 
