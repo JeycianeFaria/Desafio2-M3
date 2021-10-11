@@ -48,7 +48,7 @@ public class Sistema {
 
             } else if (opcaoSelecionada == 3) {
                 SistemaVendas.registrarVenda();
-                System.out.println("\nVenda registrada com sucesso!");
+
 
             } else if (opcaoSelecionada == 4) {
 

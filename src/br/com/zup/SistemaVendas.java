@@ -23,4 +23,39 @@ public class SistemaVendas {
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
     }
 
+    public static boolean executarVendas() throws Exception {
+
+        boolean executarMenuVendas = true;
+
+        while (executarMenuVendas) {
+
+            menuVendas();
+            int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
+
+            if (opcaoSelecionada == 1){
+                registrarVenda();
+                System.out.println("\nVenda registrada com sucesso!");
+
+            }else if (opcaoSelecionada == 2){
+                ServicoVenda.exibirVendasRegistradas();
+
+            }else if (opcaoSelecionada == 3){
+                SistemaCliente.comprasPorCliente();
+
+            }else if (opcaoSelecionada == 4){
+                SistemaVendedor.vendasPorVendedor();
+
+            }else if (opcaoSelecionada == 5){
+                executarMenuVendas = false;
+            }
+            else{
+                System.out.println("\nOpção selecionada inválida, digite novamente!");
+
+            }
+
+        }
+
+        return executarMenuVendas;
+    }
+
 }
