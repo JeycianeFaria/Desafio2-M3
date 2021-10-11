@@ -75,6 +75,7 @@ public class Sistema {
 
     public static Vendedor buscarVendedor() throws Exception {
         String emailBusca = capturarDados("Digite o email do vendedor que deseja buscar: ").nextLine();
+        ServicoCliente.validarEmail(emailBusca);
         return ServicoVendedor.buscarVendedor(emailBusca);
     }
 

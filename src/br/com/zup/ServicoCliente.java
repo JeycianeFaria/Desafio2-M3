@@ -10,7 +10,7 @@ public class ServicoCliente {
 
     public static void validarEmail(String email) throws Exception{
         if (!email.contains("@")){
-            throw new Exception("\nEmail digitado inválido.Cadastro não realizado!");
+            throw new Exception("\nEmail digitado inválido!");
         }
     }
 
