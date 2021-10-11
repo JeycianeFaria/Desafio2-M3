@@ -41,8 +41,7 @@ public class Sistema {
             int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
             if (opcaoSelecionada == 1) {
-                SistemaCliente.cadastrarCliente();
-                System.out.println("\nCliente cadastrado com sucesso!");
+               SistemaCliente.executarCliente();
 
             } else if (opcaoSelecionada == 2) {
                 SistemaVendedor.cadastrarVendedor();
