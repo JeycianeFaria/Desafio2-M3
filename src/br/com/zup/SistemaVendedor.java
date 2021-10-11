@@ -2,6 +2,8 @@ package br.com.zup;
 
 import java.util.List;
 
+import static br.com.zup.Sistema.capturarDados;
+
 public class SistemaVendedor {
 
     public static void menuVendedor(){
@@ -36,6 +38,37 @@ public class SistemaVendedor {
         Vendedor vendedor = ServicoVendedor.buscarVendedor(email);
 
         return ServicoVenda.vendasPorVendedor(vendedor);
+    }
+
+    public static boolean executarVendedor() throws Exception {
+
+        boolean executarMenuVendedor = true;
+
+        while (executarMenuVendedor) {
+
+            menuVendedor();
+            int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
+
+            if (opcaoSelecionada == 1){
+                cadastrarVendedor();
+                System.out.println("\nVendedor cadastrado com sucesso!");
+
+            }else if (opcaoSelecionada == 2){
+                ServicoVendedor.exibirVendedoresCadastrados();
+
+            }else if (opcaoSelecionada == 3){
+                SistemaVendedor.vendasPorVendedor();
+
+            }else if (opcaoSelecionada == 4){
+                executarMenuVendedor = false;
+
+            }else{
+                System.out.println("\nOpção selecionada inválida, digite novamente!");
+            }
+
+        }
+
+        return executarMenuVendedor;
     }
 
 }

@@ -54,14 +54,19 @@ public class SistemaCliente {
             if (opcaoSelecionada == 1){
                 cadastrarCliente();
                 System.out.println("\nCliente cadastrado com sucesso!");
+
             }else if (opcaoSelecionada == 2){
                 ServicoCliente.exibirClientesCadastrados();
+
             }else if (opcaoSelecionada == 3){
                 SistemaCliente.comprasPorCliente();
+
             }else if (opcaoSelecionada == 4){
                 executarMenuCliente = false;
+
             }else{
                 System.out.println("\nOpção selecionada inválida, digite novamente!");
+
             }
 
         }

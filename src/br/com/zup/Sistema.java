@@ -41,11 +41,10 @@ public class Sistema {
             int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
             if (opcaoSelecionada == 1) {
-               SistemaCliente.executarCliente();
+                SistemaCliente.executarCliente();
 
             } else if (opcaoSelecionada == 2) {
-                SistemaVendedor.cadastrarVendedor();
-                System.out.println("\nVendedor cadastrado com sucesso!");
+                SistemaVendedor.executarVendedor();
 
             } else if (opcaoSelecionada == 3) {
                 SistemaVendas.registrarVenda();
@@ -72,10 +71,9 @@ public class Sistema {
                     } else if (opcaoSelecionada == 4) {
                         SistemaCliente.comprasPorCliente();
 
-                    }else if (opcaoSelecionada == 5){
+                    } else if (opcaoSelecionada == 5) {
                         SistemaVendedor.vendasPorVendedor();
-                    }
-                    else if (opcaoSelecionada == 6){
+                    } else if (opcaoSelecionada == 6) {
                         exibirSubMenu = false;
                     } else {
                         System.out.println("\nOpção selecionada inválida, digite novamente!");
