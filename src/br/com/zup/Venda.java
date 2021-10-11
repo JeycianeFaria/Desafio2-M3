@@ -55,13 +55,11 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder exibir = new StringBuilder();
-        exibir.append("========Venda========\n");
-        exibir.append(getCliente() + "\n");
-        exibir.append(getVendedorResponsavel());
-        exibir.append("\n====Dados=da=Venda===");
-        exibir.append("\nValor: R$" + valorASerPago);
+        exibir.append("\n========Venda========");
+        exibir.append("\nNome do cliente: " + getCliente().getNome());
+        exibir.append("\nValor da compra: R$" + valorASerPago);
+        exibir.append("\nVendedor responsável: " + getVendedorResponsavel().getNome());
         exibir.append("\nData registro: " + dataDeRegistro);
-        exibir.append("\n=====================");
         return exibir.toString();
     }
 }

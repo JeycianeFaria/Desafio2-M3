@@ -7,9 +7,10 @@ public class ServicoCliente {
 
     private static List<Cliente> clientes = new ArrayList<>();
 
+
     public static void validarEmail(String email) throws Exception{
         if (!email.contains("@")){
-            throw new Exception("Email digitado inválido!");
+            throw new Exception("\nEmail digitado inválido!");
         }
     }
 
@@ -17,18 +18,20 @@ public class ServicoCliente {
     public static void verificarCpfCliente(String cpf) throws Exception{
         for (Cliente referencia: clientes){
             if (referencia.getCpf().equals(cpf)){
-                throw new Exception("CPF já cadastrado!");
+                throw new Exception("\nCPF já cadastrado!");
             }
         }
     }
 
+
     public static void verificarEmailCliente(String email) throws Exception{
         for (Cliente referencia:clientes){
             if(referencia.getEmail().equalsIgnoreCase(email)){
-                throw new Exception("Email já cadastrado!");
+                throw new Exception("\nEmail já cadastrado!");
             }
         }
     }
+
 
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String telefone){
 
@@ -38,7 +41,9 @@ public class ServicoCliente {
         return cliente;
     }
 
+
     public static List<Cliente> exibirClientesCadastrados(){
+
         for (Cliente referencia:clientes){
             System.out.println(referencia);
         }
@@ -46,7 +51,9 @@ public class ServicoCliente {
         return clientes;
     }
 
+
     public static Cliente buscarCliente(String cpfBusca) throws Exception{
+
         for (Cliente referencia:clientes){
             if(referencia.getCpf().equals(cpfBusca)){
                 return referencia;

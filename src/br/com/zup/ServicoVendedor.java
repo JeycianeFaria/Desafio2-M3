@@ -7,18 +7,20 @@ public class ServicoVendedor {
 
     private static List<Vendedor> vendedores = new ArrayList<>();
 
+
     public static void verificarCpfVendedor(String cpf) throws Exception{
         for (Vendedor referencia:vendedores){
             if (referencia.getCpf().equals(cpf)){
-                throw new Exception("CPF já cadastrado!");
+                throw new Exception("\nCPF já cadastrado!");
             }
         }
     }
 
+
     public static void verificarEmailVendedor(String email) throws Exception{
         for (Vendedor referencia:vendedores){
             if(referencia.getEmail().equalsIgnoreCase(email)){
-                throw new Exception("Email já cadastrado!");
+                throw new Exception("\nEmail já cadastrado!");
             }
         }
     }
@@ -32,13 +34,16 @@ public class ServicoVendedor {
         return vendedor;
     }
 
+
     public static List<Vendedor> exibirVendedoresCadastrados(){
+
         for (Vendedor referencia:vendedores){
             System.out.println(referencia);
         }
 
         return vendedores;
     }
+
 
     public static Vendedor buscarVendedor(String emailBusca) throws Exception{
         for (Vendedor referencia:vendedores){

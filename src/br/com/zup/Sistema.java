@@ -7,12 +7,11 @@ public class Sistema {
 
     public static Scanner capturarDados(String mensagem) {
         System.out.println(mensagem);
-
         return new Scanner(System.in);
     }
 
     public static void menuPrincipal() {
-        System.out.println("======Bem Vindo=====");
+        System.out.println("\n==================BEM VINDO==================");
         System.out.println("Digite 1 - para cadastrar um cliente.");
         System.out.println("Digite 2 - para cadastrar um vendedor.");
         System.out.println("Digite 3 - para registrar uma venda.");
@@ -20,15 +19,17 @@ public class Sistema {
         System.out.println("Digite 5 - para sair.");
     }
 
+
     public static void menuExibirRegistros() {
-        System.out.println("==========Resgistros=da=Organização=========");
+        System.out.println("\n===========Resgistros=da=Organização===========");
         System.out.println("Digite 1 - para exibir clientes cadastrados.");
         System.out.println("Digite 2 - para exibir vendedores cadastrados.");
         System.out.println("Digite 3 - para exibir todas vendas registradas.");
-        System.out.println("Digite 4 - para exibir compras registradas por cliente.");
-        System.out.println("Digite 5 - para exibir vendas registradas por vendedor.");
+        System.out.println("Digite 4 - para exibir compras por cliente.");
+        System.out.println("Digite 5 - para exibir vendas por vendedor.");
         System.out.println("Digite 6 - para voltar ao menu anterior.");
     }
+
 
     public static Cliente cadastrarCliente() throws Exception{
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
@@ -40,12 +41,6 @@ public class Sistema {
         String telefone = capturarDados("Digite o telefone do cliente: ").nextLine();
 
         return ServicoCliente.cadastrarCliente(nome, cpf, email, telefone);
-    }
-
-    public static Cliente buscarCliente() throws Exception {
-        String cpfBusca = capturarDados("\nDigite o CPF do cliente que deseja buscar: ").nextLine();
-
-        return ServicoCliente.buscarCliente(cpfBusca);
     }
 
 
@@ -61,11 +56,6 @@ public class Sistema {
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email, salario);
     }
 
-    public static Vendedor buscarVendedor() throws Exception {
-        String emailBusca = capturarDados("\nDigite o email do vendedor que deseja buscar: ").nextLine();
-
-        return ServicoVendedor.buscarVendedor(emailBusca);
-    }
 
     public static Venda registrarVenda() throws Exception {
         Cliente cliente = Sistema.buscarCliente();
@@ -76,12 +66,26 @@ public class Sistema {
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
     }
 
+
+    public static Cliente buscarCliente() throws Exception {
+        String cpfBusca = capturarDados("Digite o CPF do cliente que deseja buscar: ").nextLine();
+        return ServicoCliente.buscarCliente(cpfBusca);
+    }
+
+
+    public static Vendedor buscarVendedor() throws Exception {
+        String emailBusca = capturarDados("Digite o email do vendedor que deseja buscar: ").nextLine();
+        return ServicoVendedor.buscarVendedor(emailBusca);
+    }
+
+
     public static List<Venda> comprasPorCliente() throws Exception{
         String cpf = capturarDados("Digite o cpf do cliente que deseja verificar as compras: ").nextLine();
         Cliente cliente = ServicoCliente.buscarCliente(cpf);
 
         return ServicoVenda.comprasPorCliente(cliente);
     }
+
 
     public static List<Venda> vendasPorVendedor() throws Exception{
         String email = capturarDados("Digite o email do vendedor que deseja verificar as vendas: ").nextLine();
@@ -90,6 +94,7 @@ public class Sistema {
         return ServicoVenda.vendasPorVendedor(vendedor);
     }
 
+
     public static boolean executar() throws Exception {
 
         boolean executarMenu = true;
@@ -97,19 +102,19 @@ public class Sistema {
         while (executarMenu) {
 
             menuPrincipal();
-            int opcaoSelecionada = capturarDados("Digite a opção desejada: ").nextInt();
+            int opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
             if (opcaoSelecionada == 1) {
                 cadastrarCliente();
-                System.out.println("\nCliente cadastrado com sucesso!\n");
+                System.out.println("\nCliente cadastrado com sucesso!");
 
             } else if (opcaoSelecionada == 2) {
                 cadastrarVendedor();
-                System.out.println("\nVendedor cadastrado com sucesso!\n");
+                System.out.println("\nVendedor cadastrado com sucesso!");
 
             } else if (opcaoSelecionada == 3) {
                 registrarVenda();
-                System.out.println("\nVenda registrada com sucesso!\n");
+                System.out.println("\nVenda registrada com sucesso!");
 
             } else if (opcaoSelecionada == 4) {
 
@@ -118,7 +123,7 @@ public class Sistema {
                 while (exibirSubMenu) {
 
                     menuExibirRegistros();
-                    opcaoSelecionada = capturarDados("Digite a opção desejada: ").nextInt();
+                    opcaoSelecionada = capturarDados("\nDigite o número da opção que deseja selecionar: ").nextInt();
 
                     if (opcaoSelecionada == 1) {
                         ServicoCliente.exibirClientesCadastrados();
@@ -138,7 +143,7 @@ public class Sistema {
                     else if (opcaoSelecionada == 6){
                         exibirSubMenu = false;
                     } else {
-                        System.out.println("\nOpção selecionada inválida, digite novamente!\n");
+                        System.out.println("\nOpção selecionada inválida, digite novamente!");
 
                     }
 
@@ -149,7 +154,7 @@ public class Sistema {
                 System.out.println("\nAté a proxima!\n");
 
             } else {
-                System.out.println("\nOpção selecionada inválida, digite novamente!\n");
+                System.out.println("\nOpção selecionada inválida, digite novamente!");
 
             }
 
@@ -157,4 +162,5 @@ public class Sistema {
 
         return executarMenu;
     }
+
 }
