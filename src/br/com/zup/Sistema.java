@@ -31,19 +31,6 @@ public class Sistema {
     }
 
 
-
-
-
-    public static Venda registrarVenda() throws Exception {
-        Cliente cliente = SistemaCliente.buscarCliente();
-        Vendedor vendedor = SistemaVendedor.buscarVendedor();
-        double valorASerPago = capturarDados("Digite o valor a ser pago: ").nextDouble();
-        String dataRegistro = capturarDados("Digite a data do registro da venda: ").nextLine();
-
-        return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
-    }
-
-
     public static boolean executar() throws Exception {
 
         boolean executarMenu = true;
@@ -62,7 +49,7 @@ public class Sistema {
                 System.out.println("\nVendedor cadastrado com sucesso!");
 
             } else if (opcaoSelecionada == 3) {
-                registrarVenda();
+                SistemaVendas.registrarVenda();
                 System.out.println("\nVenda registrada com sucesso!");
 
             } else if (opcaoSelecionada == 4) {
