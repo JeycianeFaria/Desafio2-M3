@@ -10,7 +10,7 @@ public class ServicoCliente {
 
     public static void validarEmail(String email) throws Exception{
         if (!email.contains("@")){
-            throw new Exception("\nEmail digitado inválido!");
+            throw new Exception("\nEmail digitado inválido.Cadastro não realizado!");
         }
     }
 
@@ -44,8 +44,12 @@ public class ServicoCliente {
 
     public static List<Cliente> exibirClientesCadastrados(){
 
-        for (Cliente referencia:clientes){
-            System.out.println(referencia);
+        if (clientes.size() != 0){
+            for (Cliente referencia:clientes){
+                System.out.println(referencia);
+            }
+        }else {
+            System.out.println("\nNão exitem clientes cadastrado!");
         }
 
         return clientes;

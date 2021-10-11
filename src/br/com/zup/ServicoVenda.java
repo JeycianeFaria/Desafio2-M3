@@ -19,8 +19,12 @@ public class ServicoVenda {
 
     public static List<Venda> exibirVendasRegistradas(){
 
-        for (Venda referencia:registroVendas){
-            System.out.println(referencia);
+        if (registroVendas.size() != 0){
+            for (Venda referencia:registroVendas){
+                System.out.println(referencia);
+            }
+        }else {
+            System.out.println("\nNão exitem vendas registradas!");
         }
 
         return registroVendas;
@@ -34,9 +38,15 @@ public class ServicoVenda {
         for (Venda referencia:registroVendas){
             if (referencia.getCliente().equals(cliente)){
                 comprasCliente.add(referencia);
-                System.out.println(referencia);
             }
         }
+
+        if (comprasCliente.size() != 0){
+            System.out.println(comprasCliente);
+        }else {
+            System.out.println("\nNão exitem compras registrada para este cliente!");
+        }
+
 
         return comprasCliente;
     }
@@ -49,8 +59,13 @@ public class ServicoVenda {
         for (Venda referencia:registroVendas){
             if (referencia.getVendedorResponsavel().equals(vendedor)){
                 vendasVendedor.add(referencia);
-                System.out.println(referencia);
             }
+        }
+
+        if (vendasVendedor.size() != 0){
+            System.out.println(vendasVendedor);
+        }else {
+            System.out.println("\nNão exitem vendas registrada para este vendedor!");
         }
 
         return vendasVendedor;

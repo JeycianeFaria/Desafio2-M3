@@ -37,9 +37,14 @@ public class ServicoVendedor {
 
     public static List<Vendedor> exibirVendedoresCadastrados(){
 
-        for (Vendedor referencia:vendedores){
-            System.out.println(referencia);
+        if (vendedores.size() != 0){
+            for (Vendedor referencia:vendedores){
+                System.out.println(referencia);
+            }
+        }else {
+            System.out.println("\nNão exitem vendedores cadastrado!");
         }
+
 
         return vendedores;
     }
