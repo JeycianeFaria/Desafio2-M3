@@ -31,41 +31,16 @@ public class Sistema {
     }
 
 
-    public static Vendedor cadastrarVendedor() throws Exception {
-        String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
-        String cpf = capturarDados("Digite o cpf do vendedor: ").nextLine();
-        ServicoVendedor.verificarCpfVendedor(cpf);
-        String email = capturarDados("Digite o email do vendedor: ").nextLine();
-        ServicoCliente.validarEmail(email);
-        ServicoVendedor.verificarEmailVendedor(email);
-        double salario = capturarDados("Digite o salário do vendedor: ").nextDouble();
 
-        return ServicoVendedor.cadastrarVendedor(nome, cpf, email, salario);
-    }
 
 
     public static Venda registrarVenda() throws Exception {
         Cliente cliente = SistemaCliente.buscarCliente();
-        Vendedor vendedor = Sistema.buscarVendedor();
+        Vendedor vendedor = SistemaVendedor.buscarVendedor();
         double valorASerPago = capturarDados("Digite o valor a ser pago: ").nextDouble();
         String dataRegistro = capturarDados("Digite a data do registro da venda: ").nextLine();
 
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
-    }
-
-
-    public static Vendedor buscarVendedor() throws Exception {
-        String emailBusca = capturarDados("Digite o email do vendedor que deseja buscar: ").nextLine();
-        ServicoCliente.validarEmail(emailBusca);
-        return ServicoVendedor.buscarVendedor(emailBusca);
-    }
-
-
-    public static List<Venda> vendasPorVendedor() throws Exception{
-        String email = capturarDados("Digite o email do vendedor que deseja verificar as vendas: ").nextLine();
-        Vendedor vendedor = ServicoVendedor.buscarVendedor(email);
-
-        return ServicoVenda.vendasPorVendedor(vendedor);
     }
 
 
@@ -83,7 +58,7 @@ public class Sistema {
                 System.out.println("\nCliente cadastrado com sucesso!");
 
             } else if (opcaoSelecionada == 2) {
-                cadastrarVendedor();
+                SistemaVendedor.cadastrarVendedor();
                 System.out.println("\nVendedor cadastrado com sucesso!");
 
             } else if (opcaoSelecionada == 3) {
@@ -112,7 +87,7 @@ public class Sistema {
                         SistemaCliente.comprasPorCliente();
 
                     }else if (opcaoSelecionada == 5){
-                        Sistema.vendasPorVendedor();
+                        SistemaVendedor.vendasPorVendedor();
                     }
                     else if (opcaoSelecionada == 6){
                         exibirSubMenu = false;
