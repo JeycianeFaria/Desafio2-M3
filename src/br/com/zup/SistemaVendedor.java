@@ -4,6 +4,15 @@ import java.util.List;
 
 public class SistemaVendedor {
 
+    public static void menuVendedor(){
+        System.out.println("\n================MENU VENDEDOR================");
+        System.out.println("Digite 1 - para cadastrar um vendedor.");
+        System.out.println("Digite 2 - para exibir vendedores cadastrados.");
+        System.out.println("Digite 3 - para exibir todas as vendas de um vendedor.");
+        System.out.println("Digite 4 - para voltar ao menu principal.");
+    }
+
+
     public static Vendedor cadastrarVendedor() throws Exception {
         String nome = Sistema.capturarDados("Digite o nome do vendedor: ").nextLine();
         String cpf = Sistema.capturarDados("Digite o cpf do vendedor: ").nextLine();
