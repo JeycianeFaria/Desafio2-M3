@@ -42,7 +42,7 @@ public class SistemaCliente {
     }
 
 
-    public static boolean executarCliente() throws Exception {
+    public static void executarCliente() throws Exception {
 
         boolean executarMenuCliente = true;
 
@@ -71,7 +71,6 @@ public class SistemaCliente {
 
         }
 
-        return executarMenuCliente;
     }
 
 

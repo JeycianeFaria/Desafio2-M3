@@ -40,7 +40,7 @@ public class SistemaVendedor {
         return ServicoVenda.vendasPorVendedor(vendedor);
     }
 
-    public static boolean executarVendedor() throws Exception {
+    public static void executarVendedor() throws Exception {
 
         boolean executarMenuVendedor = true;
 
@@ -68,7 +68,6 @@ public class SistemaVendedor {
 
         }
 
-        return executarMenuVendedor;
     }
 
 }

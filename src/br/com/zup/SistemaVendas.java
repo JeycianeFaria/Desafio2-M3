@@ -23,7 +23,7 @@ public class SistemaVendas {
         return ServicoVenda.registrarVenda(cliente, vendedor, valorASerPago, dataRegistro);
     }
 
-    public static boolean executarVendas() throws Exception {
+    public static void executarVendas() throws Exception {
 
         boolean executarMenuVendas = true;
 
@@ -55,7 +55,6 @@ public class SistemaVendas {
 
         }
 
-        return executarMenuVendas;
     }
 
 }
