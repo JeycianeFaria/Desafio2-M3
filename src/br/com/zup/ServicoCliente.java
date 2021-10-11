@@ -42,14 +42,14 @@ public class ServicoCliente {
     }
 
 
-    public static List<Cliente> exibirClientesCadastrados() {
+    public static List<Cliente> exibirClientesCadastrados() throws Exception {
 
         if (clientes.size() != 0) {
             for (Cliente referencia : clientes) {
                 System.out.println(referencia);
             }
         } else {
-            System.out.println("\nNão exitem clientes cadastrado!");
+            throw new Exception("\nNão exitem clientes cadastrados!");
         }
 
         return clientes;

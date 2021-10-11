@@ -35,14 +35,14 @@ public class ServicoVendedor {
     }
 
 
-    public static List<Vendedor> exibirVendedoresCadastrados() {
+    public static List<Vendedor> exibirVendedoresCadastrados() throws Exception{
 
         if (vendedores.size() != 0) {
             for (Vendedor referencia : vendedores) {
                 System.out.println(referencia);
             }
         } else {
-            System.out.println("\nNão exitem vendedores cadastrado!");
+            throw new Exception("\nNão exitem vendedores cadastrado!");
         }
 
 

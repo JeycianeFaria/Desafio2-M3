@@ -17,21 +17,21 @@ public class ServicoVenda {
     }
 
 
-    public static List<Venda> exibirVendasRegistradas() {
+    public static List<Venda> exibirVendasRegistradas() throws Exception {
 
         if (registroVendas.size() != 0) {
             for (Venda referencia : registroVendas) {
                 System.out.println(referencia);
             }
         } else {
-            System.out.println("\nNão exitem vendas registradas!");
+            throw  new Exception("\nNão exitem vendas registradas!");
         }
 
         return registroVendas;
     }
 
 
-    public static List<Venda> comprasPorCliente(Cliente cliente) {
+    public static List<Venda> comprasPorCliente(Cliente cliente) throws Exception {
 
         List<Venda> comprasCliente = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class ServicoVenda {
         if (comprasCliente.size() != 0) {
             System.out.println(comprasCliente);
         } else {
-            System.out.println("\nNão exitem compras registrada para este cliente!");
+            throw new Exception("\nNão exitem compras registrada para este cliente!");
         }
 
 
@@ -52,7 +52,7 @@ public class ServicoVenda {
     }
 
 
-    public static List<Venda> vendasPorVendedor(Vendedor vendedor) {
+    public static List<Venda> vendasPorVendedor(Vendedor vendedor) throws Exception {
 
         List<Venda> vendasVendedor = new ArrayList<>();
 
@@ -65,7 +65,7 @@ public class ServicoVenda {
         if (vendasVendedor.size() != 0) {
             System.out.println(vendasVendedor);
         } else {
-            System.out.println("\nNão exitem vendas registrada para este vendedor!");
+            throw new Exception("\nNão exitem vendas registrada para este vendedor!");
         }
 
         return vendasVendedor;
